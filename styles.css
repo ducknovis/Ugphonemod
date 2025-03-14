@@ -104,8 +104,6 @@ body {
     border-radius: 10px;
     cursor: pointer;
     font-size: 14px;
-    width: 100%;
-    max-width: 200px;
     transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -116,26 +114,41 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.youtube-btn {
+    background: linear-gradient(135deg, #ff0000, #ff4040);
+}
+
+.youtube-btn:hover {
+    background: linear-gradient(135deg, #e60000, #ff3333);
+}
+
+.discord-btn {
+    background: linear-gradient(135deg, #7289da, #5865f2);
+}
+
+.discord-btn:hover {
+    background: linear-gradient(135deg, #6278c9, #4752c4);
+}
+
 #me .me-links.ugphone-links {
     margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
     background-color: #f0f0f0;
     padding: 10px;
     border-radius: 10px;
 }
 
 #me .me-links .link-btn {
-    display: block;
-    margin-bottom: 10px;
+    margin: 0;
     width: 100%;
-}
-
-#me .me-links .link-btn:last-child {
-    margin-bottom: 0;
 }
 
 #home .home-content.ugphone-card {
     text-align: center;
     padding: 20px;
+    max-height: 400px;
 }
 
 #home .bottom-center {
@@ -143,30 +156,31 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    height: calc(100% - 20px);
+    height: 100%;
     width: 100%;
 }
 
 #home .home-content h2.ugphone-title {
+    font-size: 16px;
     margin-bottom: 5px;
 }
 
 #home .home-content p.ugphone-subtitle {
     font-size: 12px;
     color: #666;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 #home .home-image {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 15px;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #home .goto-btn.ugphone-button {
-    width: 200px;
+    width: 150px;
     margin: 0 auto;
 }
 
