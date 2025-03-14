@@ -148,7 +148,7 @@ body {
 #home .home-content.ugphone-card {
     text-align: center;
     padding: 20px;
-    max-height: 100%;
+    max-height: calc(100vh - 100px); /* Đảm bảo không vượt quá chiều cao màn hình trừ nav bar */
 }
 
 #home .bottom-center {
@@ -158,6 +158,7 @@ body {
     justify-content: flex-end;
     height: 100%;
     width: 100%;
+    padding-bottom: 60px; /* Tạo khoảng cách từ nav bar */
 }
 
 #home .home-content h2.ugphone-title {
@@ -255,6 +256,7 @@ body {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     border-top: 1px solid #ddd;
     border-radius: 15px 15px 0 0;
+    height: 60px; /* Đảm bảo nav bar có chiều cao cố định */
 }
 
 .tab-button {
