@@ -148,17 +148,35 @@ body {
 #home .home-content.ugphone-card {
     text-align: center;
     padding: 20px;
-    max-height: calc(100vh - 100px); /* Đảm bảo không vượt quá chiều cao màn hình trừ nav bar */
+    max-height: calc(100vh - 100px); /* Đảm bảo không vượt quá chiều cao trừ nav bar */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
-#home .bottom-center {
+#home .logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#home .home-logo {
+    max-width: 100px; /* Kích thước logo tối đa */
+    height: auto;
+    border-radius: 10px;
+}
+
+#home .bottom-content {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    height: 100%;
-    width: 100%;
     padding-bottom: 60px; /* Tạo khoảng cách từ nav bar */
+}
+
+#home .bottom-center {
+    width: 100%;
 }
 
 #home .home-content h2.ugphone-title {
@@ -214,6 +232,10 @@ body {
         font-size: 16px;
         padding: 12px 25px;
         max-width: 250px;
+    }
+
+    #home .home-logo {
+        max-width: 150px;
     }
 
     #home .home-image {
