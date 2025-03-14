@@ -29,7 +29,7 @@ body {
 }
 
 .app-logo {
-    max-width: 80px; /* Kích thước logo trên mobile */
+    max-width: 40px; /* Giảm một nửa từ 80px trên mobile */
     height: auto;
     border-radius: 5px;
 }
@@ -220,7 +220,7 @@ body {
     }
 
     .app-logo {
-        max-width: 120px; /* Kích thước logo trên desktop */
+        max-width: 60px; /* Giảm một nửa từ 120px trên desktop */
     }
 
     .ugphone-card {
