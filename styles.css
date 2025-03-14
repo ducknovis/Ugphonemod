@@ -148,7 +148,7 @@ body {
 #home .home-content.ugphone-card {
     text-align: center;
     padding: 20px;
-    max-height: 400px;
+    max-height: 100%;
 }
 
 #home .bottom-center {
@@ -172,16 +172,77 @@ body {
 }
 
 #home .home-image {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     margin-bottom: 10px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #home .goto-btn.ugphone-button {
-    width: 150px;
+    width: 120px;
     margin: 0 auto;
+}
+
+/* Media Queries cho desktop */
+@media (min-width: 768px) {
+    .container {
+        max-width: 800px;
+        width: 80%;
+    }
+
+    .ugphone-card {
+        padding: 20px;
+        margin: 15px;
+    }
+
+    #me .profile-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .ugphone-title {
+        font-size: 24px;
+    }
+
+    #me .tab-pane-content p {
+        font-size: 16px;
+    }
+
+    .ugphone-button {
+        font-size: 16px;
+        padding: 12px 25px;
+        max-width: 250px;
+    }
+
+    #home .home-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    #home .goto-btn.ugphone-button {
+        width: 200px;
+    }
+
+    #home .home-content h2.ugphone-title {
+        font-size: 20px;
+    }
+
+    #home .home-content p.ugphone-subtitle {
+        font-size: 14px;
+    }
+
+    .tab-nav {
+        padding: 15px 0;
+    }
+
+    .tab-button i {
+        font-size: 24px;
+    }
+
+    .tab-button span {
+        font-size: 14px;
+    }
 }
 
 .ugphone-nav {
