@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Thêm chức năng cho nút "Goto Dashboard"
     document.querySelector('.goto-btn').addEventListener('click', () => {
         document.querySelector('[data-tab="dashboard"]').click();
     });
