@@ -24,17 +24,22 @@
         </header>
         <main class="content">
             <div class="tab-content">
-                <div class="tab-pane active" id="home">Content for Home</div>
+                <div class="tab-pane" id="home">Content for Home</div>
                 <div class="tab-pane" id="dashboard">Content for Dashboard</div>
                 <div class="tab-pane" id="buy">Content for Buy</div>
-                <div class="tab-pane" id="me">Content for Me</div>
+                <div class="tab-pane active" id="me">
+                    <h2>My Profile</h2>
+                    <p><strong>ID:</strong> 828797</p>
+                    <p><strong>Welfare Points:</strong> 80</p>
+                    <button class="profile-btn">Edit Profile</button>
+                </div>
             </div>
         </main>
         <nav class="tab-nav">
             <button class="tab-button" data-tab="home"><i class="fas fa-home"></i><span>Home</span></button>
             <button class="tab-button" data-tab="dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></button>
             <button class="tab-button" data-tab="buy"><i class="fas fa-shopping-bag"></i><span>Buy</span></button>
-            <button class="tab-button" data-tab="me"><i class="fas fa-user"></i><span>Me</span></button>
+            <button class="tab-button active" data-tab="me"><i class="fas fa-user"></i><span>Me</span></button>
         </nav>
         <footer>
             <a href="#">Contact Customer Service</a>
