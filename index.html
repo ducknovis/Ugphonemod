@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabbed UI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile">
+                <img src="https://via.placeholder.com/40" alt="Profile Icon" class="profile-icon">
+                <div>
+                    <p>Me</p>
+                    <p>ID: 828797</p>
+                </div>
+            </div>
+            <div class="welfare">
+                <p>Welfare Center</p>
+                <span>80 <i class="fas fa-gem"></i></span>
+            </div>
+        </header>
+        <nav class="tab-nav">
+            <button class="tab-button active" data-tab="invite"><i class="fas fa-user-plus"></i> Invite Users</button>
+            <button class="tab-button" data-tab="myorder"><i class="fas fa-shopping-cart"></i> My Order</button>
+            <button class="tab-button" data-tab="network"><i class="fas fa-network-wired"></i> Network Check</button>
+            <button class="tab-button" data-tab="redeem"><i class="fas fa-gift"></i> Redeem Code</button>
+            <button class="tab-button" data-tab="more"><i class="fas fa-ellipsis-h"></i> View More</button>
+        </nav>
+        <div class="tab-content">
+            <div class="tab-pane active" id="invite">Content for Invite Users</div>
+            <div class="tab-pane" id="myorder">Content for My Order</div>
+            <div class="tab-pane" id="network">Content for Network Check</div>
+            <div class="tab-pane" id="redeem">Content for Redeem Code</div>
+            <div class="tab-pane" id="more">Content for View More</div>
+        </div>
+        <footer>
+            <a href="#">Contact Customer Service</a>
+            <a href="#">Facebook</a>
+            <a href="#">Official Community</a>
+            <a href="#">Discord</a>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
