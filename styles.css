@@ -118,6 +118,45 @@ body {
     color: #ff6347;
 }
 
+#home .home-content {
+    padding: 10px;
+    text-align: center;
+}
+
+#home .home-content h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#home .home-content p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+#home .home-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+#home .goto-btn {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s;
+}
+
+#home .goto-btn:hover {
+    background-color: #e5533d;
+}
+
 .tab-nav {
     display: flex;
     justify-content: space-around;
