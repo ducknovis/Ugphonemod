@@ -12,10 +12,12 @@ body {
     max-width: 400px;
     width: 100%;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     height: 100vh;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .content {
@@ -36,14 +38,21 @@ body {
     display: block;
 }
 
-#me .profile-header {
-    background-color: #ff6347;
+.ugphone-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 10px;
+}
+
+#me .profile-header.ugphone-card {
+    background: linear-gradient(135deg, #ff6347, #ff8c69);
     color: white;
-    padding: 10px;
-    text-align: center;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    margin-bottom: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 #me .profile {
@@ -66,14 +75,16 @@ body {
     font-size: 14px;
 }
 
-#me .tab-pane-content {
-    padding: 10px;
+#me .tab-pane-content.ugphone-card {
+    margin-top: 0;
+    padding-top: 10px;
 }
 
-#me .tab-pane-content h2 {
+.ugphone-title {
     font-size: 18px;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 
 #me .tab-pane-content p {
@@ -82,27 +93,31 @@ body {
     margin: 5px 0;
 }
 
-#me .profile-btn {
-    background-color: #ff6347;
+.ugphone-button {
+    background: linear-gradient(135deg, #ff6347, #ff8c69);
     color: white;
     border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 12px;
-    margin: 10px 0;
-    transition: background-color 0.3s;
+    font-size: 14px;
+    width: 100%;
+    max-width: 200px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#me .profile-btn:hover {
-    background-color: #e5533d;
+.ugphone-button:hover {
+    background: linear-gradient(135deg, #e5533d, #ff7f50);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#me .me-links {
+#me .me-links.ugphone-links {
     margin-top: 15px;
-    background-color: #f5f5f5;
+    background-color: #f0f0f0;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 #me .me-links a {
@@ -118,56 +133,35 @@ body {
     color: #ff6347;
 }
 
-#home .home-content {
-    padding: 10px;
+#home .home-content.ugphone-card {
     text-align: center;
+    padding: 20px;
 }
 
-#home .center-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
+#home .home-content h2.ugphone-title {
+    margin-bottom: 5px;
 }
 
-#home .home-content h2 {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 8px;
-}
-
-#home .home-content p {
+#home .home-content p.ugphone-subtitle {
     font-size: 12px;
     color: #666;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 #home .home-image {
     width: 200px;
     height: 200px;
-    margin-bottom: 12px;
-    border-radius: 5px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#home .goto-btn {
-    background-color: #ff6347;
-    color: white;
-    border: none;
-    padding: 8px 0;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 12px;
+#home .goto-btn.ugphone-button {
     width: 200px;
-    transition: background-color 0.3s;
+    margin: 0 auto;
 }
 
-#home .goto-btn:hover {
-    background-color: #e5533d;
-}
-
-.tab-nav {
+.ugphone-nav {
     display: flex;
     justify-content: space-around;
     background-color: #fff;
@@ -176,6 +170,7 @@ body {
     bottom: 0;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     border-top: 1px solid #ddd;
+    border-radius: 15px 15px 0 0;
 }
 
 .tab-button {
@@ -220,9 +215,10 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 4px;
-    height: 4px;
+    width: 6px;
+    height: 6px;
     background-color: #ff6347;
     border-radius: 50%;
     margin-top: 2px;
+    box-shadow: 0 0 4px rgba(255, 99, 71, 0.5);
 }
