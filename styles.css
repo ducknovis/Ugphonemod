@@ -1,98 +1,82 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+    }
 
-.container {
-    max-width: 400px;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    .sidebar {
+        width: 250px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+    }
 
-header {
-    background-color: #ff6347;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
+    .profile {
+        text-align: center;
+        padding: 10px 0;
+        background-color: #FF5722;
+        color: white;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
 
-.profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
+    .profile-icon {
+        vertical-align: middle;
+        margin-right: 5px;
+    }
 
-.profile-icon {
-    border-radius: 50%;
-}
+    .welfare-center {
+        text-align: center;
+        padding: 10px;
+        background-color: #FF5722;
+        color: white;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
 
-.welfare {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    margin-top: 10px;
-}
+    .diamond {
+        color: #fff;
+        font-size: 12px;
+    }
 
-.tab-nav {
-    display: flex;
-    flex-direction: column;
-}
+    .menu {
+        list-style: none;
+        padding: 0;
+    }
 
-.tab-button {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 15px;
-    border: none;
-    background: none;
-    text-align: left;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
+    .menu li {
+        padding: 10px 15px;
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        transition: background-color 0.3s;
+    }
 
-.tab-button i {
-    font-size: 18px;
-}
+    .menu li i {
+        margin-right: 10px;
+        color: #FF5722;
+    }
 
-.tab-button:hover, .tab-button.active {
-    background-color: #f0f0f0;
-}
+    .menu li:hover {
+        background-color: #f0f0f0;
+        border-radius: 5px;
+    }
 
-.tab-content {
-    padding: 20px;
-}
-
-.tab-pane {
-    display: none;
-}
-
-.tab-pane.active {
-    display: block;
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    background-color: #fff;
-    border-top: 1px solid #ddd;
-}
-
-footer a {
-    text-decoration: none;
-    color: #333;
-    padding: 10px;
-    text-align: center;
-}
-
-footer a:hover {
-    background-color: #f0f0f0;
-}
+    .separator {
+        font-weight: bold;
+        color: #666;
+        margin: 10px 0;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+</style>
