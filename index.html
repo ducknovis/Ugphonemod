@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Improved Tabbed UI with Bottom Navigation</title>
+    <title>Improved Tabbed UI like ugphone</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -32,21 +32,21 @@
                     <p><strong>ID:</strong> 828797</p>
                     <p><strong>Welfare Points:</strong> 80</p>
                     <button class="profile-btn">Edit Profile</button>
+                    <div class="me-links">
+                        <a href="#">Contact Customer Service</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">Official Community</a>
+                        <a href="#">Discord</a>
+                    </div>
                 </div>
             </div>
         </main>
         <nav class="tab-nav">
             <button class="tab-button" data-tab="home"><i class="fas fa-home"></i><span>Home</span></button>
-            <button class="tab-button" data-tab="dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></button>
+            <button class="tab-button active" data-tab="dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></button>
             <button class="tab-button" data-tab="buy"><i class="fas fa-shopping-bag"></i><span>Buy</span></button>
-            <button class="tab-button active" data-tab="me"><i class="fas fa-user"></i><span>Me</span></button>
+            <button class="tab-button" data-tab="me"><i class="fas fa-user"></i><span>Me</span></button>
         </nav>
-        <footer>
-            <a href="#">Contact Customer Service</a>
-            <a href="#">Facebook</a>
-            <a href="#">Official Community</a>
-            <a href="#">Discord</a>
-        </footer>
     </div>
     <script src="script.js"></script>
 </body>
