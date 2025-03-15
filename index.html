@@ -20,12 +20,35 @@
                             <h2 class="ugphone-title">Welcome User to ugphone mod</h2>
                             <p class="ugphone-subtitle">App develop by ducknovis</p>
                             <img src="https://tr.rbxcdn.com/180DAY-433e973b5fbc1e8d5cdebd0c6be03472/420/420/Decal/Webp/noFilter" alt="Welcome Image" class="home-image">
-                            <button class="goto-btn ugphone-button">Goto Dashboard</button>
+                            <button class="goto-btn ugphone-button" onclick="switchTab('dashboard')">Goto Dashboard</button>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane" id="dashboard">Content for Dashboard</div>
-                <div class="tab-pane" id="buy">Content for Buy</div>
+                <div class="tab-pane" id="dashboard">
+                    <div class="dashboard-content ugphone-card">
+                        <div class="devices-container">
+                            <!-- Devices sẽ được thêm động qua JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="buy">
+                    <div class="buy-content ugphone-card">
+                        <h2 class="ugphone-title">Buy Device</h2>
+                        <p><strong>Current Diamonds:</strong> <span id="current-diamonds">999999</span> <i class="fas fa-gem"></i></p>
+                        <p><strong>Pre-installed App:</strong> 
+                            <select id="app-selection">
+                                <option value="no-app">No App</option>
+                                <option value="roblox">Roblox</option>
+                                <option value="free-fire">Free Fire</option>
+                                <option value="genshin-impact">Genshin Impact</option>
+                                <option value="ea-sport-fc">EA Sports FC</option>
+                            </select>
+                        </p>
+                        <p><strong>Device Duration:</strong> 4 hours</p>
+                        <p><strong>Diamonds Required:</strong> 250 <i class="fas fa-gem"></i></p>
+                        <button class="buy-btn ugphone-button" onclick="buyDevice()">Buy Now</button>
+                    </div>
+                </div>
                 <div class="tab-pane" id="me">
                     <div class="profile-header ugphone-card">
                         <div class="profile">
@@ -37,7 +60,7 @@
                         </div>
                         <div class="welfare">
                             <p>Welfare Center</p>
-                            <span>999999 <i class="fas fa-gem"></i></span>
+                            <span id="diamond-count">999999</span> <i class="fas fa-gem"></i>
                         </div>
                     </div>
                     <div class="tab-pane-content ugphone-card">
@@ -62,6 +85,16 @@
             <button class="tab-button" data-tab="me"><i class="fas fa-user"></i><span>Me</span></button>
         </nav>
     </div>
+
+    <!-- Overlay cho full screen device -->
+    <div id="device-fullscreen" class="device-fullscreen">
+        <div class="fullscreen-controls">
+            <button class="control-btn arrow-btn"><i class="fas fa-arrow-left"></i></button>
+            <button class="control-btn home-btn" onclick="closeFullscreen()"><i class="fas fa-home"></i></button>
+        </div>
+        <iframe id="fullscreen-iframe" src="" frameborder="0"></iframe>
+    </div>
+
     <script src="script.js"></script>
     <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9204a0705b56b050',t:'MTc0MTk2NDI4MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
