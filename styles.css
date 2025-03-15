@@ -6,6 +6,7 @@ body {
     display: flex;
     justify-content: center;
     min-height: 100vh;
+    overflow: hidden; /* Ngăn cuộn toàn trang */
 }
 
 .container {
@@ -18,46 +19,48 @@ body {
     height: 100vh;
     border-radius: 15px;
     overflow: hidden;
-    position: relative; /* Để logo có thể định vị tuyệt đối */
+    position: relative;
 }
 
 .header-logo {
     position: absolute;
     top: 10px;
     left: 10px;
-    z-index: 10; /* Đảm bảo logo luôn hiển thị trên cùng */
+    z-index: 10;
 }
 
 .app-logo {
-    max-width: 40px; /* Giảm một nửa từ 80px trên mobile */
+    max-width: 40px;
     height: auto;
     border-radius: 5px;
 }
 
 .content {
     flex: 1;
-    overflow-y: auto;
     padding: 0;
-    margin-top: 0; /* Đảm bảo không bị che khuất bởi logo */
+    margin-top: 0;
+    overflow: hidden;
 }
 
 .tab-content {
     padding: 0;
+    height: 100%;
 }
 
 .tab-pane {
     display: none;
+    height: 100%;
 }
 
 .tab-pane.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 .ugphone-card {
     background: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 15px;
     margin: 10px;
 }
 
@@ -163,7 +166,7 @@ body {
 #home .home-content.ugphone-card {
     text-align: center;
     padding: 20px;
-    max-height: calc(100vh - 100px); /* Đảm bảo không vượt quá chiều cao trừ nav bar */
+    max-height: calc(100vh - 100px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -176,7 +179,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    padding-bottom: 60px; /* Tạo khoảng cách từ nav bar */
+    padding-bottom: 60px;
 }
 
 #home .bottom-center {
@@ -207,6 +210,191 @@ body {
     margin: 0 auto;
 }
 
+/* Dashboard styling */
+#dashboard .dashboard-content.ugphone-card {
+    padding: 0;
+    margin: 0;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex: 1;
+}
+
+#dashboard .devices-container {
+    width: 100%;
+    height: 70%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 10px 0;
+    justify-content: flex-start;
+    white-space: nowrap;
+}
+
+#dashboard .device-item {
+    min-width: 250px;
+    flex: 0 0 auto;
+    height: 100%;
+}
+
+#dashboard .device-inner {
+    width: 100%;
+    height: 100%;
+    background-color: #555;
+    border-radius: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#dashboard .device-inner::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    background: linear-gradient(135deg, #ff7f50, #ff4500);
+    border-radius: 25px;
+    z-index: 1;
+    border: 2px solid #fff;
+}
+
+#dashboard .device-inner.purchased {
+    background-color: #fff;
+}
+
+#dashboard .device-inner.purchased::before {
+    display: none; /* Ẩn gradient khi đã mua */
+}
+
+#dashboard .device-inner iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    pointer-events: none; /* Ngăn tương tác khi ở Dashboard */
+    z-index: 2;
+}
+
+#dashboard .add-device {
+    position: relative;
+    z-index: 2;
+    font-size: 80px;
+    color: #fff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #ff6347, #ff8c69);
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+#dashboard .device-inner:hover .add-device {
+    transform: scale(1.1);
+}
+
+#dashboard .device-inner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Buy tab styling */
+#buy .buy-content.ugphone-card {
+    text-align: center;
+    padding: 20px;
+    max-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#buy .buy-content p {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+}
+
+#buy .buy-content select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+#buy .buy-btn.ugphone-button {
+    width: 150px;
+    margin-top: 20px;
+}
+
+/* Fullscreen Device styling */
+.device-fullscreen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.device-fullscreen.active {
+    display: flex;
+}
+
+.fullscreen-controls {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 10px;
+    z-index: 1001;
+}
+
+.control-btn {
+    background: linear-gradient(135deg, #ff6347, #ff8c69);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.control-btn:hover {
+    background: linear-gradient(135deg, #e5533d, #ff7f50);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#fullscreen-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    pointer-events: auto; /* Cho phép tương tác khi full screen */
+}
+
 /* Media Queries cho desktop */
 @media (min-width: 768px) {
     .container {
@@ -220,7 +408,7 @@ body {
     }
 
     .app-logo {
-        max-width: 60px; /* Giảm một nửa từ 120px trên desktop */
+        max-width: 60px;
     }
 
     .ugphone-card {
@@ -264,6 +452,42 @@ body {
         font-size: 14px;
     }
 
+    #dashboard .dashboard-content.ugphone-card {
+        height: calc(100vh - 80px);
+    }
+
+    #dashboard .devices-container {
+        height: 70%;
+    }
+
+    #dashboard .device-item {
+        min-width: 300px;
+    }
+
+    #dashboard .add-device {
+        font-size: 100px;
+        width: 180px;
+        height: 180px;
+    }
+
+    #buy .buy-content p {
+        font-size: 18px;
+    }
+
+    #buy .buy-content select {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    #buy .buy-btn.ugphone-button {
+        width: 200px;
+    }
+
+    .control-btn {
+        font-size: 20px;
+        padding: 12px;
+    }
+
     .tab-nav {
         padding: 15px 0;
     }
@@ -287,7 +511,7 @@ body {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     border-top: 1px solid #ddd;
     border-radius: 15px 15px 0 0;
-    height: 60px; /* Đảm bảo nav bar có chiều cao cố định */
+    height: 60px;
 }
 
 .tab-button {
