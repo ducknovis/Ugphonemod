@@ -20,33 +20,22 @@
                             <h2 class="ugphone-title">Welcome User to ugphone mod</h2>
                             <p class="ugphone-subtitle">App develop by ducknovis</p>
                             <img src="https://tr.rbxcdn.com/180DAY-433e973b5fbc1e8d5cdebd0c6be03472/420/420/Decal/Webp/noFilter" alt="Welcome Image" class="home-image">
-                            <button class="goto-btn ugphone-button" onclick="switchTab('dashboard')">Goto Dashboard</button>
+                            <button class="goto-btn ugphone-button" onclick="switchTab('device-no-vpn')">Goto Device No VPN</button>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane" id="dashboard">
+                <div class="tab-pane" id="device-no-vpn">
                     <div class="dashboard-content ugphone-card">
                         <div class="devices-container">
                             <!-- Devices sẽ được thêm động qua JavaScript -->
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane" id="buy">
-                    <div class="buy-content ugphone-card">
-                        <h2 class="ugphone-title">Buy Device</h2>
-                        <p><strong>Current Diamonds:</strong> <span id="current-diamonds">999999</span> <i class="fas fa-gem"></i></p>
-                        <p><strong>Pre-installed App:</strong> 
-                            <select id="app-selection">
-                                <option value="no-app">No App</option>
-                                <option value="roblox">Roblox</option>
-                                <option value="free-fire">Free Fire</option>
-                                <option value="genshin-impact">Genshin Impact</option>
-                                <option value="ea-sport-fc">EA Sports FC</option>
-                            </select>
-                        </p>
-                        <p><strong>Device Duration:</strong> 4 hours</p>
-                        <p><strong>Diamonds Required:</strong> 250 <i class="fas fa-gem"></i></p>
-                        <button class="buy-btn ugphone-button" onclick="buyDevice()">Buy Now</button>
+                <div class="tab-pane" id="device-vpn">
+                    <div class="dashboard-content ugphone-card">
+                        <div class="devices-container">
+                            <!-- Devices sẽ được thêm động qua JavaScript -->
+                        </div>
                     </div>
                 </div>
                 <div class="tab-pane" id="me">
@@ -69,8 +58,6 @@
                         <p><strong>Welfare Points:</strong> 80</p>
                         <button class="profile-btn ugphone-button">Edit Profile</button>
                         <div class="me-links ugphone-links">
-                            <button class="link-btn ugphone-button">Get Diamond</button>
-                            <button class="link-btn ugphone-button">Reward Code</button>
                             <button class="link-btn ugphone-button youtube-btn" onclick="window.open('https://www.youtube.com/@ductrenyt', '_blank')">Youtube</button>
                             <button class="link-btn ugphone-button discord-btn" onclick="window.open('https://discord.gg/3PyeVU7qE8', '_blank')">Discord</button>
                         </div>
@@ -80,22 +67,12 @@
         </main>
         <nav class="tab-nav ugphone-nav">
             <button class="tab-button active" data-tab="home"><i class="fas fa-home"></i><span>Home</span></button>
-            <button class="tab-button" data-tab="dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></button>
-            <button class="tab-button" data-tab="buy"><i class="fas fa-shopping-bag"></i><span>Buy</span></button>
+            <button class="tab-button" data-tab="device-no-vpn"><i class="fas fa-tachometer-alt"></i><span>Device No VPN</span></button>
+            <button class="tab-button" data-tab="device-vpn"><i class="fas fa-tachometer-alt"></i><span>Device VPN</span></button>
             <button class="tab-button" data-tab="me"><i class="fas fa-user"></i><span>Me</span></button>
         </nav>
     </div>
 
-    <!-- Overlay cho full screen device -->
-    <div id="device-fullscreen" class="device-fullscreen">
-        <div class="fullscreen-controls">
-            <button class="control-btn arrow-btn"><i class="fas fa-arrow-left"></i></button>
-            <button class="control-btn home-btn" onclick="closeFullscreen()"><i class="fas fa-home"></i></button>
-        </div>
-        <iframe id="fullscreen-iframe" src="" frameborder="0"></iframe>
-    </div>
-
     <script src="script.js"></script>
-    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9204a0705b56b050',t:'MTc0MTk2NDI4MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
