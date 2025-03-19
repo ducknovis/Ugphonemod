@@ -118,10 +118,10 @@ body {
     background: linear-gradient(135deg, #ff6347, #ff8c69);
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 12px;
     transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -211,10 +211,11 @@ body {
 }
 
 /* Dashboard styling */
-#dashboard .dashboard-content.ugphone-card {
+#device-no-vpn .dashboard-content.ugphone-card,
+#device-vpn .dashboard-content.ugphone-card {
     padding: 0;
     margin: 0;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 60px); /* Trừ chiều cao của tab-nav */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -223,9 +224,10 @@ body {
     flex: 1;
 }
 
-#dashboard .devices-container {
+#device-no-vpn .devices-container,
+#device-vpn .devices-container {
     width: 100%;
-    height: 70%;
+    height: 100%; /* Chiếm toàn bộ chiều cao */
     overflow-x: auto;
     overflow-y: hidden;
     display: flex;
@@ -236,330 +238,92 @@ body {
     white-space: nowrap;
 }
 
-#dashboard .device-item {
-    min-width: 250px;
+#device-no-vpn .device-item,
+#device-vpn .device-item {
+    width: calc(100% - 20px); /* Chiếm gần hết chiều ngang, trừ margin */
+    height: calc(100% - 20px); /* Chiếm gần hết chiều cao, trừ padding */
     flex: 0 0 auto;
-    height: 100%;
+    position: relative; /* Để định vị nút Play */
 }
 
-#dashboard .device-inner {
+#device-no-vpn .device-inner,
+#device-vpn .device-inner {
     width: 100%;
     height: 100%;
-    background-color: #555;
+    background: linear-gradient(135deg, #FF8C00, #FF4500); /* Gradient cam */
+    border: 4px solid #000; /* Viền đen dày 4px */
     border-radius: 30px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#dashboard .device-inner::before {
-    content: '';
+#device-no-vpn .device-inner:hover,
+#device-vpn .device-inner:hover {
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+}
+
+.device-logo {
+    max-width: 150px; /* Tăng kích thước logo để phù hợp với thiết bị lớn hơn */
+    max-height: 150px;
+    object-fit: contain;
+}
+
+.play-button {
     position: absolute;
-    top: 15px;
-    left: 15px;
-    right: 15px;
-    bottom: 15px;
-    background: linear-gradient(135deg, #ff7f50, #ff4500);
-    border-radius: 25px;
-    z-index: 1;
-    border: 2px solid #fff;
-}
-
-#dashboard .device-inner.purchased {
-    background-color: #fff;
-}
-
-#dashboard .device-inner.purchased::before {
-    display: none; /* Ẩn gradient khi đã mua */
-}
-
-#dashboard .device-inner iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    pointer-events: none; /* Ngăn tương tác khi ở Dashboard */
-    z-index: 2;
-}
-
-#dashboard .add-device {
-    position: relative;
-    z-index: 2;
-    font-size: 80px;
-    color: #fff;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
-    background: linear-gradient(135deg, #ff6347, #ff8c69);
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-#dashboard .device-inner:hover .add-device {
-    transform: scale(1.1);
-}
-
-#dashboard .device-inner:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-}
-
-/* Buy tab styling */
-#buy .buy-content.ugphone-card {
-    text-align: center;
-    padding: 20px;
-    max-height: calc(100vh - 100px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-#buy .buy-content p {
-    font-size: 16px;
-    color: #333;
-    margin: 10px 0;
-}
-
-#buy .buy-content select {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-    margin-left: 10px;
-}
-
-#buy .buy-btn.ugphone-button {
-    width: 150px;
-    margin-top: 20px;
-}
-
-/* Fullscreen Device styling */
-.device-fullscreen {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.device-fullscreen.active {
-    display: flex;
-}
-
-.fullscreen-controls {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    display: flex;
-    gap: 10px;
-    z-index: 1001;
-}
-
-.control-btn {
-    background: linear-gradient(135deg, #ff6347, #ff8c69);
+    bottom: 10px; /* Đặt nút dưới logo */
+    background: linear-gradient(135deg, #32CD32, #228B22); /* Màu xanh lá cây gradient */
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 50%;
+    padding: 12px 24px; /* Tăng kích thước nút */
+    border-radius: 15px; /* Bo tròn hơn */
     cursor: pointer;
-    font-size: 16px;
+    font-size: 16px; /* Tăng kích thước chữ */
     transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 120px; /* Đặt chiều rộng cố định */
+    text-align: center;
 }
 
-.control-btn:hover {
-    background: linear-gradient(135deg, #e5533d, #ff7f50);
+.play-button:hover {
+    background: linear-gradient(135deg, #2E8B57, #228B22);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#fullscreen-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    pointer-events: auto; /* Cho phép tương tác khi full screen */
-}
-
-/* Media Queries cho desktop */
-@media (min-width: 768px) {
-    .container {
-        max-width: 800px;
-        width: 80%;
-    }
-
-    .header-logo {
-        top: 15px;
-        left: 15px;
-    }
-
-    .app-logo {
-        max-width: 60px;
-    }
-
-    .ugphone-card {
-        padding: 20px;
-        margin: 15px;
-    }
-
-    #me .profile-icon {
-        width: 60px;
-        height: 60px;
-    }
-
-    .ugphone-title {
-        font-size: 24px;
-    }
-
-    #me .tab-pane-content p {
-        font-size: 16px;
-    }
-
-    .ugphone-button {
-        font-size: 16px;
-        padding: 12px 25px;
-        max-width: 250px;
-    }
-
-    #home .home-image {
-        width: 200px;
-        height: 200px;
-    }
-
-    #home .goto-btn.ugphone-button {
-        width: 200px;
-    }
-
-    #home .home-content h2.ugphone-title {
-        font-size: 20px;
-    }
-
-    #home .home-content p.ugphone-subtitle {
-        font-size: 14px;
-    }
-
-    #dashboard .dashboard-content.ugphone-card {
-        height: calc(100vh - 80px);
-    }
-
-    #dashboard .devices-container {
-        height: 70%;
-    }
-
-    #dashboard .device-item {
-        min-width: 300px;
-    }
-
-    #dashboard .add-device {
-        font-size: 100px;
-        width: 180px;
-        height: 180px;
-    }
-
-    #buy .buy-content p {
-        font-size: 18px;
-    }
-
-    #buy .buy-content select {
-        font-size: 16px;
-        padding: 8px;
-    }
-
-    #buy .buy-btn.ugphone-button {
-        width: 200px;
-    }
-
-    .control-btn {
-        font-size: 20px;
-        padding: 12px;
-    }
-
-    .tab-nav {
-        padding: 15px 0;
-    }
-
-    .tab-button i {
-        font-size: 24px;
-    }
-
-    .tab-button span {
-        font-size: 14px;
-    }
-}
-
-.ugphone-nav {
+.tab-nav {
     display: flex;
     justify-content: space-around;
-    background-color: #fff;
+    background: #fff;
     padding: 10px 0;
+    border-top: 1px solid #eee;
     position: sticky;
     bottom: 0;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    border-top: 1px solid #ddd;
-    border-radius: 15px 15px 0 0;
-    height: 60px;
 }
 
 .tab-button {
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 12px;
     color: #666;
-    padding: 5px;
-    width: 25%;
-    transition: all 0.3s ease;
-}
-
-.tab-button i {
-    font-size: 20px;
-    margin-bottom: 3px;
-}
-
-.tab-button span {
-    font-size: 12px;
-}
-
-.tab-button:hover {
-    color: #ff6347;
 }
 
 .tab-button.active {
     color: #ff6347;
 }
 
-.tab-button.active i {
-    color: #ff6347;
+.tab-button i {
+    font-size: 20px;
+    margin-bottom: 5px;
 }
 
-.tab-button.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 6px;
-    height: 6px;
-    background-color: #ff6347;
-    border-radius: 50%;
-    margin-top: 2px;
-    box-shadow: 0 0 4px rgba(255, 99, 71, 0.5);
+.tab-button span {
+    font-size: 12px;
 }
