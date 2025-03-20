@@ -35,13 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function populateDeviceNoVpn() {
         const devicesNoVpnData = [
             {
-                logo: 'https://cdn.now.gg/apps-content/10417/icon/chasers.png',
-                url: 'https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUFxIdDhcIHlRKS09KTFQYExoIHgkIVRMPFhc='
-            },
-            {
                 logo: 'https://cdn.now.gg/assets-opt/_next/image?url=https%3A%2F%2Fcdn.now.gg%2Fassets-opt%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fcdn.now.gg%252Fapps-content%252F10512%252Ficon%252Fthe-walking-dead-survivors.png%26w%3D256%26q%3D80&w=1440&q=70',
                 url: 'https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUHBoXGgMCVgsXGgJWDx4YExUUFxQcAlYXEhYSDx4fVEpLTkpJVA8THlYMGhcQEhUcVh8eGh9WCA4JDRINFAkIVRMPFhc='
-            }
+            },
         ];
 
         devicesContainerNoVpn.innerHTML = '';
