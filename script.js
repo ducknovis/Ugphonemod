@@ -1,12 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Lấy các phần tử cần thiết
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabPanes = document.querySelectorAll('.tab-pane');
     const devicesContainerNoVpn = document.querySelector('#device-no-vpn .devices-container');
     const devicesContainerVpn = document.querySelector('#device-vpn .devices-container');
     const diamondCountElement = document.querySelector('#diamond-count');
 
-    // Hàm chuyển tab
     function switchTab(tabId) {
         console.log('Chuyển tab đến:', tabId);
         tabPanes.forEach(pane => pane.classList.remove('active'));
@@ -25,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Thêm sự kiện click cho các tab button
     function initializeTabButtons() {
         tabButtons.forEach(button => {
             button.addEventListener('click', function() {
@@ -35,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Dữ liệu thiết bị cho tab "Device No VPN"
     function populateDeviceNoVpn() {
         const devicesNoVpnData = [
             {
@@ -62,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Dữ liệu thiết bị cho tab "Device VPN"
     function populateDeviceVpn() {
         const devicesVpnData = [
             {
@@ -121,7 +116,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Thêm sự kiện click cho tất cả các nút Play
     function initializePlayButtons() {
         const playButtons = document.querySelectorAll('.play-button');
         playButtons.forEach(button => {
@@ -132,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Nhấn Play, mở URL:', url);
                 if (url) {
                     try {
-                        window.open(url, '_blank');
+                        window.location.href = url;
                     } catch (error) {
                         console.error('Lỗi khi mở tab mới:', error);
                     }
@@ -143,7 +137,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Khởi tạo ứng dụng
     function initializeApp() {
         console.log('Khởi tạo ứng dụng...');
         initializeTabButtons();
@@ -153,9 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         switchTab('home');
     }
 
-    // Định nghĩa hàm switchTab toàn cục để nút "Goto Device No VPN" có thể gọi
     window.switchTab = switchTab;
 
-    // Chạy ứng dụng
     initializeApp();
 });
