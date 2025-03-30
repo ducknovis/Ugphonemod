@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 logo: 'https://cdn.now.gg/assets-opt/_next/image?url=https%3A%2F%2Fcdn.now.gg%2Fassets-opt%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fcdn.now.gg%252Fapps-content%252Fcom.roblox.client%252Ficon%252Froblox.png%26w%3D256%26q%3D80&w=1440&q=70',
-                url: 'https://mathstutor.life/apps/roblox-corporation/5349/roblox.html'
+                url: 'https://ducknovis.github.io/creturbolite'
             },
             {
                 logo: 'https://cdn.now.gg/assets-opt/_next/image?url=https%3A%2F%2Fcdn.now.gg%2Fassets-opt%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fcdn.now.gg%252Fapps-content%252Fcom.miHoYo.GenshinImpact%252Ficon%252Fgenshin-impact.png%26w%3D256%26q%3D80&w=1440&q=70',
