@@ -53,6 +53,26 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 logo: 'https://cdn.now.gg/assets-opt/_next/image?url=https%3A%2F%2Fcdn.now.gg%2Fassets-opt%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fcdn.now.gg%252Fapps-content%252F8888%252Ficon%252Fzombieland-doomsday-survival.png%26w%3D256%26q%3D80&w=1440&q=70',
                 url: 'https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUEQ4eHR4VHFYcGhYeCFRDQ0NDVAEUFhkSHhcaFR9WHxQUFggfGgJWCA4JDRINGhdVEw8WFw=='
+            },
+            {
+                logo: 'https://cdn.now.gg/apps-content/9887/icon/scarlet-girls.png',
+                url: 'https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUGQ4JCA8cGhYeVEJDQ0xUCBgaCRceD1YcEgkXCFUTDxYX'
+            },
+            {
+                logo: 'https://cdn.now.gg/apps-content/8270/icon/battle-bears-heroes.png',
+                url: 'https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUGRoPDxceGBQSFVYcGhYeCFRDSUxLVBkaDw8XHlYZHhoJCFYTHgkUHghVEw8WFw=='
+            },
+            {
+                logo: 'https://cdn.now.gg/assets-opt/_next/image?url=https%3A%2F%2Fcdn.now.gg%2Fassets-opt%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fcdn.now.gg%252Fapps-content%252F9191%252Ficon%252Fkepler-2100.png%26w%3D256%26q%3D80&w=1440&q=70',
+                url: 'https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUAR4CFA5WHBoWHlRCSkJKVBAeCxceCVZJSktLVRMPFhc='
+            },
+            {
+                logo: 'https://cdn.now.gg/assets-opt/_next/image?url=https%3A%2F%2Fcdn.now.gg%2Fassets-opt%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fcdn.now.gg%252Fapps-content%252F9030%252Ficon%252Fmagic-forest-dragon-quest.png%26w%3D256%26q%3D80&w=1440&q=70',
+                url: 'https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUCA4cGglWHBoWHlYVHg8MFAkQVhcSFhIPHh9UQktIS1QWGhwSGFYdFAkeCA9WHwkaHBQVVgoOHggPVRMPFhc='
+            },
+            {
+                logo: 'https://cdn.now.gg/assets-opt/_next/image?url=https%3A%2F%2Fcdn.now.gg%2Fassets-opt%2F_next%2Fimage%3Furl%3Dhttps%253A%252F%252Fcdn.now.gg%252Fapps-content%252F10382%252Ficon%252Fancient-seal-the-exorcist.png%26w%3D256%26q%3D80&w=1440&q=70',
+                url: 'https://webproxy.proxyshare.com/request?p=GgkeGkYuKF0ORhMPDwsIQVRUFRQMVRwcVBoLCwhUFxQNFFYeFQ8eCQ8aEhUWHhUPVhMUFRxWEBQVHFYXEhYSDx4fVEpLSENJVBoVGBIeFQ9WCB4aF1YPEx5WHgMUCRgSCA9VEw8WFw=='
             }
         ];
 
